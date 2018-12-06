@@ -19,7 +19,7 @@ Alignak checks package for MongoDB
 
 **Note:** *this check pack is only an example for checking MongoDB using the Nagios check_tcp command. Please feel free to comment or suggest improvements :)*
 
-This package uses the `check_mongodb` script from `this project <https://github.com/orthecreedence/check_MongoDB>`_. A version of the script is included to make installation easier but you may refresh when installing...
+This package uses the `check_mongodb.py` script from `this project <https://github.com/mzupan/nagios-plugin-mongodb>`_. A version of the script is included to make installation easier but you may refresh when installing...
 
 
 Installation
@@ -29,16 +29,14 @@ The installation of this checks pack will copy some configuration files in the A
 
 From PyPI
 ~~~~~~~~~
-To install the package from PyPI:
-::
+To install the package from PyPI::
 
    sudo pip install alignak-checks-mongodb
 
 
 From source files
 ~~~~~~~~~~~~~~~~~
-To install the package from the source files:
-::
+To install the package from the source files::
 
    git clone https://github.com/Alignak-monitoring-contrib/alignak-checks-mongodb
    cd alignak-checks-mongodb
@@ -58,20 +56,18 @@ This checks pack is using the `check_tcp` Nagios (or Monitoring) plugin that mus
 Alignak configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-For a Linux monitored host, you simply have to tag the concerned host with the template ``MongoDB``.
-::
+For a Linux monitored host, you simply have to tag the concerned host with the template ``MongoDB``.::
 
-    # An host with an MongoDB instance running
+    # An host with a MongoDB instance running
     define host{
-        use                     MongoDB
+        use                     mongodb
         host_name               my_es
         address                 127.0.0.1
     }
 
 
 
-When using the alignak backend, use the `setup.sh` script provided in the *json/MongoDB* directory to include all the package information into your backend
-::
+When using the alignak backend, use the `setup.sh` script provided in the *json/MongoDB* directory to include all the package information into your backend::
 
     # Backend configuration
     $ json/mongodb/setup.sh -b http://127.0.0.1:5000 -u admin -p admin
