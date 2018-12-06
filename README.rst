@@ -1,11 +1,11 @@
-Alignak checks package for Elasticsearch
+Alignak checks package for MongoDB
 ========================================
 
-*Checks pack for monitoring Elasticsearch with the check_mongodb python script*
+*Checks pack for monitoring MongoDB with the check_mongodb python script*
 
 
-.. image:: https://badge.fury.io/py/alignak_checks_elasticsearch.svg
-    :target: https://badge.fury.io/py/alignak-checks-elasticsearch
+.. image:: https://badge.fury.io/py/alignak_checks_MongoDB.svg
+    :target: https://badge.fury.io/py/alignak-checks-mongodb
     :alt: Most recent PyPi version
 
 .. image:: https://img.shields.io/badge/IRC-%23alignak-1e72ff.svg?style=flat
@@ -17,9 +17,9 @@ Alignak checks package for Elasticsearch
     :alt: License AGPL v3
 
 
-**Note:** *this check pack is only an example for checking elasticsearch using the Nagios check_tcp command. Please feel free to comment or suggest improvements :)*
+**Note:** *this check pack is only an example for checking MongoDB using the Nagios check_tcp command. Please feel free to comment or suggest improvements :)*
 
-This package uses the `check_elasticsaerch` script from `this project <https://github.com/orthecreedence/check_elasticsearch>`_. A version of the script is included to make installation easier but you may refresh when installing...
+This package uses the `check_mongodb.py` script from `this project <https://github.com/mzupan/nagios-plugin-mongodb>`_. A version of the script is included to make installation easier but you may refresh when installing...
 
 
 Installation
@@ -29,19 +29,17 @@ The installation of this checks pack will copy some configuration files in the A
 
 From PyPI
 ~~~~~~~~~
-To install the package from PyPI:
-::
+To install the package from PyPI::
 
-   sudo pip install alignak-checks-elasticsearch
+   sudo pip install alignak-checks-mongodb
 
 
 From source files
 ~~~~~~~~~~~~~~~~~
-To install the package from the source files:
-::
+To install the package from the source files::
 
-   git clone https://github.com/Alignak-monitoring-contrib/alignak-checks-elasticsearch
-   cd alignak-checks-elasticsearch
+   git clone https://github.com/Alignak-monitoring-contrib/alignak-checks-mongodb
+   cd alignak-checks-mongodb
    sudo pip install .
 
 **Note:** *using `sudo python setup.py install` will not correctly manage the package configuration files! The recommended way is really to use `pip`;)*
@@ -58,23 +56,21 @@ This checks pack is using the `check_tcp` Nagios (or Monitoring) plugin that mus
 Alignak configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-For a Linux monitored host, you simply have to tag the concerned host with the template ``elasticsearch``.
-::
+For a Linux monitored host, you simply have to tag the concerned host with the template ``MongoDB``.::
 
-    # An host with an elasticsearch instance running
+    # An host with a MongoDB instance running
     define host{
-        use                     elasticsearch
+        use                     mongodb
         host_name               my_es
         address                 127.0.0.1
     }
 
 
 
-When using the alignak backend, use the `setup.sh` script provided in the *json/elasticsearch* directory to include all the package information into your backend
-::
+When using the alignak backend, use the `setup.sh` script provided in the *json/MongoDB* directory to include all the package information into your backend::
 
     # Backend configuration
-    $ json/elasticsearch/setup.sh -b http://127.0.0.1:5000 -u admin -p admin
+    $ json/mongodb/setup.sh -b http://127.0.0.1:5000 -u admin -p admin
 
 
 **Note** that this command line is executed when installing the package from *pip*. If your backend is not set locally, you can specify its address thanks to the `-b` command line parameter.
@@ -83,4 +79,4 @@ When using the alignak backend, use the `setup.sh` script provided in the *json/
 Bugs, issues and contributing
 -----------------------------
 
-Contributions to this project are welcome and encouraged ... `issues in the project repository <https://github.com/alignak-monitoring-contrib/alignak-checks-elasticsearch/issues>`_ are the common way to raise an information.
+Contributions to this project are welcome and encouraged ... `issues in the project repository <https://github.com/alignak-monitoring-contrib/alignak-checks-mongodb/issues>`_ are the common way to raise an information.
