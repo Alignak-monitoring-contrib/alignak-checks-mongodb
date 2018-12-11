@@ -10,13 +10,13 @@
     Uses alignak-checks-monitoring for the check_tcp
 """
 # Package name
-__pkg_name__ = u"alignak_checks_elasticsearch"
+__pkg_name__ = u"alignak_checks_mongodb"
 
 # Checks types for PyPI keywords
 # Used for:
 # - PyPI keywords
 # - directory where to store files in the Alignak configuration (eg. arbiter/packs/checks_type)
-__checks_type__ = u"elasticsearch"
+__checks_type__ = u"mongodb"
 
 # Application manifest
 __version__ = u"1.1.2"
@@ -24,7 +24,7 @@ __author__ = u"Frédéric MOHIER"
 __author_email__ = u"frederic.mohier@alignak.net"
 __copyright__ = u"(c) 2015-2018 - %s" % __author__
 __license__ = u"GNU Affero General Public License, version 3"
-__git_url__ = u"https://github.com/Alignak-monitoring-contrib/alignak-checks-elasticsearch"
+__git_url__ = u"https://github.com/Alignak-monitoring-contrib/alignak-checks-mongodb"
 __doc_url__ = u"http://alignak-doc.readthedocs.io/en/latest"
 __description__ = u"Alignak checks pack for Elasticsearch"
 
